@@ -25,7 +25,7 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
         }
     }
     
-    var cancellables: [AnyCancellable] = []
+    var cancellables = Set<AnyCancellable>()
     
     private let onGetPersonSubject = PassthroughSubject<Void, Never>()
     private let onTryErrorSubject = PassthroughSubject<Void, Never>()
@@ -45,8 +45,7 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
     
     private func bindInputs(index: Int) {
         
-        let getPersonStream = onGetPersonSubject
-            .flatMap { _ in
+        onGetPersonSubject.flatMap { _ in
                 Repository.person(index: index)
                     .catch { (error: ApiError) -> Empty<GenericResponse<Person>?, Never> in
                         print(error.errorResponse.message ?? "")
@@ -54,9 +53,9 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
                     }
             }.share()
             .subscribe(responseGetPersonSubject)
+            .store(in: &cancellables)
         
-        let tryErrorStream = onTryErrorSubject
-            .flatMap { _ in
+        onTryErrorSubject.flatMap { _ in
                 Repository.tryError()
                     .catch { (error: ApiError) -> Empty<GenericResponse<Bool>?, Never> in
                         print(error.errorResponse.message ?? "")
@@ -64,9 +63,9 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
                     }
             }.share()
             .subscribe(responseTryErrorSubject)
+            .store(in: &cancellables)
         
-        let tryUnauthStream = onTryUnauth
-            .flatMap { _ in
+        onTryUnauth.flatMap { _ in
                 Repository.tryUnauth()
                     .catch { (error: ApiError) -> Empty<GenericResponse<Bool>?, Never> in
                         print(error.errorResponse.message ?? "")
@@ -74,29 +73,27 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
                     }
             }.share()
             .subscribe(responseTryUnauth)
+            .store(in: &cancellables)
         
-        cancellables += [getPersonStream, tryErrorStream, tryUnauthStream]
     }
+    
     
     private func bindOutputs() {
         
-        let personStream = responseGetPersonSubject
+        responseGetPersonSubject
             .map { $0?.result ?? Person() }
             .assign(to: \.person, on: self)
+            .store(in: &cancellables)
         
-        let errorStream = responseTryErrorSubject
+        responseTryErrorSubject
             .map { $0?.result ?? true }
             .assign(to: \.isSuccess, on: self)
+            .store(in: &cancellables)
         
-        let unauthStream = responseTryUnauth
+        responseTryUnauth
             .map { $0?.result ?? true }
             .assign(to: \.isSuccess, on: self)
-        
-        cancellables += [
-            personStream,
-            errorStream,
-            unauthStream
-        ]
+            .store(in: &cancellables)
         
     }
 }

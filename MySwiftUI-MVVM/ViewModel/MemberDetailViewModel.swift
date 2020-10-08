@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType {
     
@@ -33,6 +34,7 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
     
     @Published private(set) var person: Person = Person()
     @Published private(set) var isSuccess: Bool = true
+    @State var modalIsDisplayed = false
     
     private let responseGetPersonSubject = PassthroughSubject<GenericResponse<Person>?, Never>()
     private let responseTryErrorSubject = PassthroughSubject<GenericResponse<Bool>?, Never>()

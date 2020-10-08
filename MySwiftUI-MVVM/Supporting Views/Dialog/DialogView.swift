@@ -10,12 +10,16 @@ import SwiftUI
 struct DialogView: View {
     @Binding var isDisplayed: Bool
     
+    var title: String
+    var detail: String
+    var onClicked: (() -> Void)?
+    
     var body: some View {
         VStack(spacing: 32) {
-            Text("Nice modal, eh?")
+            Text(title)
                 .font(.title)
             
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tellus pellentesque urna sollicitudin sagittis. Fusce sem justo, eleifend eget dignissim sed, convallis at velit.")
+            Text(detail)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(width: 300)
             
@@ -28,13 +32,18 @@ struct DialogView: View {
         .padding()
     }
     
-    init(isDisplayed: Binding<Bool>) {
+    init(isDisplayed: Binding<Bool>, title: String, detail: String, onClicked: (() -> Void)? = nil) {
         self._isDisplayed = isDisplayed
+        self.title = title
+        self.detail = detail
+        self.onClicked = onClicked
     }
 }
 
 struct DialogView_Previews: PreviewProvider {
     static var previews: some View {
-        DialogView(isDisplayed: .constant(true))
+        DialogView(isDisplayed: .constant(true), title: "Title", detail: "Detail"){
+            print("dismiss")
+        }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct MemberDetailView: View {
-    
+    @State var modalIsDisplayed = false
     @ObservedObject var viewModel: MemberDetailViewModel
     
     var body: some View {
@@ -27,7 +27,7 @@ struct MemberDetailView: View {
                     .foregroundColor(Color(#colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.231372549, alpha: 1)))
                 HStack{
                     SocialButton(image: Image(uiImage: #imageLiteral(resourceName: "facebook")), title: "facebook") {
-
+                        self.modalIsDisplayed.toggle()
                     }
                     SocialButton(image: Image(uiImage: #imageLiteral(resourceName: "Instagram")), title: "instagram") {
                         print("instagram")
@@ -53,8 +53,11 @@ struct MemberDetailView: View {
             .padding(32)
         }
         .onAppear(perform: {
-            self.viewModel.apply(.tryError)
+            self.viewModel.apply(.onGetPerson)
         })
+        .modal(isPresented: $modalIsDisplayed) {
+            DialogView(isDisplayed: $modalIsDisplayed)
+        }
     }
 }
 

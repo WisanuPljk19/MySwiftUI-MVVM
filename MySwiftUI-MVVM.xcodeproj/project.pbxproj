@@ -18,6 +18,8 @@
 		18541D1E252AD4480058A4D9 /* MemberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541D1D252AD4480058A4D9 /* MemberDetailView.swift */; };
 		18541D28252AD75B0058A4D9 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541D27252AD75B0058A4D9 /* CircleImage.swift */; };
 		18887167252EB6BC00FDD77D /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18887166252EB6BC00FDD77D /* Authenticate.swift */; };
+		18887175252EE4C700FDD77D /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18887174252EE4C700FDD77D /* DialogView.swift */; };
+		1888717B252EEA4100FDD77D /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888717A252EEA4100FDD77D /* ModalView.swift */; };
 		188F85A8252B2167006660DB /* Kanit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188F85A5252B2166006660DB /* Kanit-Regular.ttf */; };
 		188F85A9252B2167006660DB /* Kanit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188F85A6252B2167006660DB /* Kanit-Medium.ttf */; };
 		188F85AA252B2167006660DB /* Kanit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188F85A7252B2167006660DB /* Kanit-Light.ttf */; };
@@ -75,6 +77,8 @@
 		18541D1D252AD4480058A4D9 /* MemberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailView.swift; sourceTree = "<group>"; };
 		18541D27252AD75B0058A4D9 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		18887166252EB6BC00FDD77D /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		18887174252EE4C700FDD77D /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
+		1888717A252EEA4100FDD77D /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		188F85A5252B2166006660DB /* Kanit-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Regular.ttf"; sourceTree = "<group>"; };
 		188F85A6252B2167006660DB /* Kanit-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Medium.ttf"; sourceTree = "<group>"; };
 		188F85A7252B2167006660DB /* Kanit-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Light.ttf"; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 		18541D26252AD7020058A4D9 /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
+				18887179252EEA1F00FDD77D /* Dialog */,
 				18541D27252AD75B0058A4D9 /* CircleImage.swift */,
 				188F85B7252C08FE006660DB /* SocialButton.swift */,
 			);
@@ -245,6 +250,23 @@
 				18887166252EB6BC00FDD77D /* Authenticate.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		18887179252EEA1F00FDD77D /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				18887185252EEAD500FDD77D /* Configs */,
+				18887174252EE4C700FDD77D /* DialogView.swift */,
+				1888717A252EEA4100FDD77D /* ModalView.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		18887185252EEAD500FDD77D /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configs;
 			sourceTree = "<group>";
 		};
 		188F85A3252B20F2006660DB /* Supporting Files */ = {
@@ -457,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1888717B252EEA4100FDD77D /* ModalView.swift in Sources */,
 				188F8619252C7002006660DB /* GenericResponse.swift in Sources */,
 				188F861B252C7002006660DB /* GenericRequest.swift in Sources */,
 				188F8620252C70B2006660DB /* Repository.swift in Sources */,
@@ -470,6 +493,7 @@
 				18541D1E252AD4480058A4D9 /* MemberDetailView.swift in Sources */,
 				188F864D252D9F70006660DB /* APIError.swift in Sources */,
 				18541D28252AD75B0058A4D9 /* CircleImage.swift in Sources */,
+				18887175252EE4C700FDD77D /* DialogView.swift in Sources */,
 				188F85B0252B21FF006660DB /* Constants.swift in Sources */,
 				188F85FD252C528D006660DB /* Person.swift in Sources */,
 				188F8612252C6E99006660DB /* ApiConfig.swift in Sources */,

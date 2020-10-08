@@ -16,6 +16,7 @@ class ErrorResponse: Codable {
     private enum CodingKeys: String, CodingKey {
         case message
         case timestamp
+        
     }
     
     init() {

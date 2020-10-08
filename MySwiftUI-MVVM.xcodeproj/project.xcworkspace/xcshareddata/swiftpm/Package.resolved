@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "becd9a729a37bdbef5bc39dc3c702b99f9e3d046",
+          "version": "5.2.2"
+        }
+      },
+      {
+        "package": "Necromancer",
+        "repositoryURL": "https://github.com/WisanuPljk19/necromancer",
+        "state": {
+          "branch": null,
+          "revision": "b4e3b067f91f5a90835235c18b3a130fe355e4cd",
+          "version": "2.0.1"
+        }
+      },
+      {
+        "package": "SwiftyBeaver",
+        "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
+        "state": {
+          "branch": null,
+          "revision": "c7b2fceb3fd0095acba4792c728f3f062baf8fb9",
+          "version": "1.9.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

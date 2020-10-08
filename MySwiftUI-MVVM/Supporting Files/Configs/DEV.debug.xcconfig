@@ -1,0 +1,6 @@
+//#include "Pods/Target Support Files/Pods-DOE/Pods-DOE.debug.xcconfig"
+
+APP_NAME = MVVM DEV
+PRODUCT_BUNDLE_IDENTIFIER = studio.eightyears.MySwiftUI-MVVM.dev
+SERVICE_HOST = https:/$()/eighthyear-members.firebaseio.com/
+//GOOGLE_SERVICE = GoogleService-Info

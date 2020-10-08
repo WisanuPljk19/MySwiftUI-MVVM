@@ -48,7 +48,7 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
         let getPersonStream = onGetPersonSubject
             .flatMap { _ in
                 Repository.person(index: index)
-                    .catch { (error: APIError) -> Empty<GenericResponse<Person>?, Never> in
+                    .catch { (error: ApiError) -> Empty<GenericResponse<Person>?, Never> in
                         print(error.errorResponse.message ?? "")
                         return .init()
                     }
@@ -58,7 +58,7 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
         let tryErrorStream = onTryErrorSubject
             .flatMap { _ in
                 Repository.tryError()
-                    .catch { (error: APIError) -> Empty<GenericResponse<Bool>?, Never> in
+                    .catch { (error: ApiError) -> Empty<GenericResponse<Bool>?, Never> in
                         print(error.errorResponse.message ?? "")
                         return .init()
                     }
@@ -68,7 +68,7 @@ final class MemberDetailViewModel: ObservableObject, UnidirectionalDataFlowType 
         let tryUnauthStream = onTryUnauth
             .flatMap { _ in
                 Repository.tryUnauth()
-                    .catch { (error: APIError) -> Empty<GenericResponse<Bool>?, Never> in
+                    .catch { (error: ApiError) -> Empty<GenericResponse<Bool>?, Never> in
                         print(error.errorResponse.message ?? "")
                         return .init()
                     }

@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+extension View {
+    func modal<ModalBody: View>(isPresented: Binding<Bool>, @ViewBuilder modalBody: () -> ModalBody) -> some View {
+        ModalView(
+            isPresented: isPresented,
+            parent: self,
+            content: modalBody
+        )
+    }
+}
+
 extension ModalStyle {
     func anyMakeBackground(configuration: BackgroundConfiguration, isPresented: Binding<Bool>) -> AnyView {
         AnyView(

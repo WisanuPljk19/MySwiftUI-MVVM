@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum APIError: Error {
+enum ApiError: Error {
     init(error: AFError) {
         self = .network
     }

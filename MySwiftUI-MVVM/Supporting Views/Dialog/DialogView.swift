@@ -33,19 +33,6 @@ struct DialogView: View {
     }
 }
 
-extension View {
-    func modal<ModalBody: View>(
-            isPresented: Binding<Bool>,
-            @ViewBuilder modalBody: () -> ModalBody
-    ) -> some View {
-        ModalView(
-            isPresented: isPresented,
-            parent: self,
-            content: modalBody
-        )
-    }
-}
-
 struct DialogView_Previews: PreviewProvider {
     static var previews: some View {
         DialogView(isDisplayed: .constant(true))

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1852D2F425301CC600F160EA /* FamilyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852D2F325301CC600F160EA /* FamilyRow.swift */; };
+		1852D2F9253048BF00F160EA /* FamilyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852D2F8253048BF00F160EA /* FamilyList.swift */; };
+		1852D2FF2530490100F160EA /* FamilyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852D2FE2530490100F160EA /* FamilyListViewModel.swift */; };
 		18541CE1252AC19F0058A4D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541CE0252AC19F0058A4D9 /* AppDelegate.swift */; };
 		18541CE3252AC19F0058A4D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541CE2252AC19F0058A4D9 /* SceneDelegate.swift */; };
 		18541CE5252AC19F0058A4D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541CE4252AC19F0058A4D9 /* ContentView.swift */; };
@@ -59,6 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1852D2F325301CC600F160EA /* FamilyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyRow.swift; sourceTree = "<group>"; };
+		1852D2F8253048BF00F160EA /* FamilyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyList.swift; sourceTree = "<group>"; };
+		1852D2FE2530490100F160EA /* FamilyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListViewModel.swift; sourceTree = "<group>"; };
 		18541CDD252AC19F0058A4D9 /* MySwiftUI-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MySwiftUI-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18541CE0252AC19F0058A4D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18541CE2252AC19F0058A4D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 			children = (
 				188F8654252E9AC5006660DB /* UnidirectionalDataFlowType.swift */,
 				188F8642252D9C32006660DB /* MemberDetailViewModel.swift */,
+				1852D2FE2530490100F160EA /* FamilyListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +227,8 @@
 		18541D19252ACB7D0058A4D9 /* FamilyList */ = {
 			isa = PBXGroup;
 			children = (
+				1852D2F325301CC600F160EA /* FamilyRow.swift */,
+				1852D2F8253048BF00F160EA /* FamilyList.swift */,
 			);
 			path = FamilyList;
 			sourceTree = "<group>";
@@ -502,14 +511,17 @@
 				188F8643252D9C32006660DB /* MemberDetailViewModel.swift in Sources */,
 				188F863E252D75E9006660DB /* ApiManager.swift in Sources */,
 				18541CE5252AC19F0058A4D9 /* ContentView.swift in Sources */,
+				1852D2F9253048BF00F160EA /* FamilyList.swift in Sources */,
 				18541D1E252AD4480058A4D9 /* MemberDetailView.swift in Sources */,
 				188F864D252D9F70006660DB /* ApiError.swift in Sources */,
 				18541D28252AD75B0058A4D9 /* CircleImage.swift in Sources */,
 				18887175252EE4C700FDD77D /* DialogView.swift in Sources */,
 				188F85B0252B21FF006660DB /* Constants.swift in Sources */,
 				188F85FD252C528D006660DB /* Person.swift in Sources */,
+				1852D2FF2530490100F160EA /* FamilyListViewModel.swift in Sources */,
 				188F8612252C6E99006660DB /* ApiConfig.swift in Sources */,
 				188F8655252E9AC6006660DB /* UnidirectionalDataFlowType.swift in Sources */,
+				1852D2F425301CC600F160EA /* FamilyRow.swift in Sources */,
 				188F8605252C539E006660DB /* BusinessUtils.swift in Sources */,
 				188F85B8252C08FE006660DB /* SocialButton.swift in Sources */,
 				188F861A252C7002006660DB /* ErrorResponse.swift in Sources */,

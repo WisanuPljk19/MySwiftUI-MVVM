@@ -54,9 +54,6 @@ struct MemberDetailView: View {
         .onAppear(perform: {
             self.viewModel.apply(.onGetPerson)
         })
-//        .modal(isPresented: viewModel.$modalIsDisplayed) {
-//            DialogView(isDisplayed: viewModel.$modalIsDisplayed)
-//        }
     }
 }
 

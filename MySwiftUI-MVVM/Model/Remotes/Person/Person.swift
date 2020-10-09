@@ -15,7 +15,6 @@ class Person: Codable {
     var id: Int?
     var note: String?
     var sex: BusinessUtils.Gender?
-    var d:Double = 0.0
     
     func fullName() -> String{
         return "\(firstName ?? "") \(lastName ?? "")"
@@ -23,6 +22,16 @@ class Person: Codable {
     
     init() {
         
+    }
+    
+    init(firstName: String,
+             lastName: String,
+             sex: BusinessUtils.Gender,
+             birthDate: Date) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.sex = sex
+        self.birthDate = birthDate
     }
     
     private enum CodingKeys: String, CodingKey {

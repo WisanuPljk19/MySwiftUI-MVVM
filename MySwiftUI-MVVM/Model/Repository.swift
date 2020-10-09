@@ -9,6 +9,10 @@ import Foundation
 import Combine
 
 class Repository {
+    
+    class func families() -> AnyPublisher<GenericResponse<Person>?, ApiError>{
+        return ApiManager<Person>.shared.serviceWithoutAccess(.familyList, params: nil)
+    }
 
     class func person(index: Int) -> AnyPublisher<GenericResponse<Person>?, ApiError> {
         return ApiManager<Person>.shared.serviceWithoutAccess(.person(index), params: nil)

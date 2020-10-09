@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class BusinessUtils {
     enum Gender {
@@ -29,6 +30,15 @@ class BusinessUtils {
                 return "M"
             case .female:
                 return "F"
+            }
+        }
+        
+        var color: Color {
+            switch self {
+            case .male:
+                return Color(#colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 1))
+            case .female:
+                return Color(#colorLiteral(red: 1, green: 0.2527923882, blue: 1, alpha: 1))
             }
         }
     }
